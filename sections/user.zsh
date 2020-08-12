@@ -15,10 +15,10 @@
 # | needed              | if needed              | if needed               |
 # --------------------------------------------------------------------------
 
-SPACESHIP_USER_SHOW="${SPACESHIP_USER_SHOW=true}"
-SPACESHIP_USER_PREFIX="${SPACESHIP_USER_PREFIX="with "}"
-SPACESHIP_USER_SUFFIX="${SPACESHIP_USER_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"}"
-SPACESHIP_USER_COLOR="${SPACESHIP_USER_COLOR="yellow"}"
+SPACESHIP_USER_SHOW="${SPACESHIP_USER_SHOW=always}"
+SPACESHIP_USER_PREFIX="${SPACESHIP_USER_PREFIX=" 🍜 "}" # Not currently in use
+SPACESHIP_USER_SUFFIX="${SPACESHIP_USER_SUFFIX=""}"
+SPACESHIP_USER_COLOR="${SPACESHIP_USER_COLOR="057"}"
 SPACESHIP_USER_COLOR_ROOT="${SPACESHIP_USER_COLOR_ROOT="red"}"
 
 # ------------------------------------------------------------------------------
@@ -43,8 +43,8 @@ spaceship_user() {
 
     spaceship::section \
       "$user_color" \
-      "$SPACESHIP_USER_PREFIX" \
-      '%n' \
+      "%{%K{089}%}🍜 %{%k%}%{%F{089}%}%{%K{202}%}%{%f%}%{%k%}" \
+      '%{%K{202}%} %n %{%k%}%{%F{202}%}%{%K{160}%}%{%f%}%{%k%}' \
       "$SPACESHIP_USER_SUFFIX"
   fi
 }

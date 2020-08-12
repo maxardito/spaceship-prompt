@@ -9,10 +9,10 @@
 # ------------------------------------------------------------------------------
 
 SPACESHIP_GCLOUD_SHOW="${SPACESHIP_GCLOUD_SHOW=true}"
-SPACESHIP_GCLOUD_PREFIX="${SPACESHIP_GCLOUD_PREFIX="using "}"
+SPACESHIP_GCLOUD_PREFIX="${SPACESHIP_GCLOUD_PREFIX=""}"
 SPACESHIP_GCLOUD_SUFFIX="${SPACESHIP_GCLOUD_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"}"
 SPACESHIP_GCLOUD_SYMBOL="${SPACESHIP_GCLOUD_SYMBOL="☁️  "}"
-SPACESHIP_GCLOUD_COLOR="${SPACESHIP_GCLOUD_COLOR="26"}"
+SPACESHIP_GCLOUD_COLOR="${SPACESHIP_GCLOUD_COLOR="082"}"
 
 # ------------------------------------------------------------------------------
 # Section
@@ -42,7 +42,7 @@ spaceship_gcloud() {
   local GCLOUD_ACTIVE_PROJECT=$(sed -n 's/project = \(.*\)/\1/p' ${GCLOUD_ACTIVE_CONFIG_FILE})
 
   # Sets the prompt text to `active-config/active-project`
-  SPACESHIP_GCLOUD_TEXT="${GCLOUD_ACTIVE_CONFIG}/${GCLOUD_ACTIVE_PROJECT}"
+  SPACESHIP_GCLOUD_TEXT="${GCLOUD_ACTIVE_PROJECT}"
 
   # Show prompt section
   spaceship::section \
